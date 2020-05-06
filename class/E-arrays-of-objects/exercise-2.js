@@ -40,12 +40,35 @@ WRITE YOUR CODE BELOW
 */
 
 
-var destinationNamesWithin500Kms = // Complete here
+var destinationNamesWithin500Kms = travelDestinations.map(getNameWithin500);
 
-var destinationNameReachableByFerry = // Complete here
+function getNameWithin500(object) {
 
-var destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+    if (object.distanceKms <= 500) {
+        return object.destinationName;
+    }
 
+
+}
+
+var destinationNameReachableByFerry = travelDestinations.map(getNameReacheableByFerry);
+
+function getNameReacheableByFerry (object){
+
+    if (object.transportations.includes("ferry")) {
+        return object.destinationName;
+    }
+}
+
+var destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.map(getNameMoreThan300KmsAwayByTrain);
+
+function getNameMoreThan300KmsAwayByTrain (object){
+
+    if (object.distanceKms > 300 && object.transportations.includes("train")){
+
+        return object.destinationName;
+    }
+}
 
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE

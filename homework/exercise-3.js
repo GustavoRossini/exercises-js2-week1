@@ -17,12 +17,22 @@ var coffeeMachine = {
     },
     insertedAmount: 0,
     insertMoney: function(amount) {
+        this.insertedAmount = amount;
 
     },
     getCoffee: function(coffee) {
+        var price = this.prices[coffee];
 
+        if (this.insertedAmount >= price) {
+            return "Please take your " + coffee;
+        }
+        // Otherwise, return a message saying there is not enough money
+        else {
+            return "Sorry you don't have enough money for a " + coffee;
+        }
     }
 };
+
 
 
 /*

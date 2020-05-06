@@ -39,6 +39,25 @@ var writers = [
   },
 ];
 
+function greetingsPrint(array){
+  var message = "Hi, my name is " + object.firstName +" " + object.lastName + " I am " + object.age + " years old, and work as a " + object.occupation + ".";
+  return message;
+}
+
+  for (i=0; i < writers.length; i++) {
+  
+    var object = writers[i];
+    
+if (object.alive === true) {
+ 
+  var message = greetingsPrint(writers);
+  console.log(message);
+}
+
+}
+
+
+
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */

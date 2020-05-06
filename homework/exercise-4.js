@@ -60,15 +60,58 @@ var restaurantFinderApplication = {
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function(numberOfPeople) {
-        // Complete here
+        
+        var availablesRestaurants = []; 
+       for (var i = 0; i < this.restaurants.length; i++) {
+
+        var restaurant = this.restaurants[i];
+        
+        var availableSeats = restaurant.totalSeats - restaurant.numberOfCustomers;
+        
+        if (availableSeats >= numberOfPeople){
+
+            availablesRestaurants.push(restaurant.name);
+            
+        }
+       
+       }
+       return availablesRestaurants ; 
     },
     findRestaurantServingDish: function(dishName) {
-        // Complete here
+        
+        var restaurantServingDish = [];
+
+        for(i = 0; i < this.restaurants.length; i++) {
+
+            var restaurant = this.restaurants[i];
+
+            if (restaurant.menu.includes(dishName)) {
+
+                restaurantServingDish.push(restaurant.name);
+            }
+
+        }
+
+        return restaurantServingDish;
     },
+
     countNumberOfRestaurantsInArea: function(area) {
-        // Complete here
+        // Define an empty array that will store all restaurants in the area
+        var restaurantsInArea = [];
+        for (var i = 0; i < this.restaurants.length; i++) {
+            var restaurant = restaurants[i];
+            // If the restaurant area is equal to the area, push the restaurant object to the restaurants in area array
+            if (restaurant.address.area === area) {
+                restaurantsInArea.push(restaurant);
+            }
+        }
+        // Get the number of restaurants in the area by getting the array length
+        var numberOfRestaurantsInArea = restaurantsInArea.length;
+        return numberOfRestaurantsInArea;
     }
 };
+    
+
 
 
 /*

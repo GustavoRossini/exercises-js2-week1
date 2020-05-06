@@ -9,13 +9,15 @@ var kitten = {
     age "23"
 };
 
-var laptop = 
+var laptop = {
     brand: "Lenovo"
-    ram "5GB"
-}
+    ram: 5 // gb
+};
 
 var phone = {
     operating system "iOS",
     hasStylus: true,
-    megapixels 12
-    "batteryLife": "24 hours"
+    megapixels: 12,
+    batteryLife: 24 //hours
+
+};

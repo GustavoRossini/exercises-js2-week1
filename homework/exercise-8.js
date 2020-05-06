@@ -100,3 +100,19 @@ var mentors = [
 ];
 
 //YOUR CODE HERE
+
+function greetings (array) {
+ 
+     var message = "Hi, my name is" + instructor.firstName + " " + instructor.lastName ". I work in Barcelona and i know React.";
+      return message;
+     }
+  
+  for (var i=0; i < array.lenght; i++){
+    var instructor = array[i];
+     if (instructor.job.city === "Barcelona" && instructor.skills.includes("React")) {
+      
+      console.log(greetings (mentors));
+
+     }
+
+    }
